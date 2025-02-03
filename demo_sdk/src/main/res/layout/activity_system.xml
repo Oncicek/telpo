@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/system_view"
+    tools:context="com.api.demo.system.SystemActivity">
+
+    <include android:id="@+id/titlebar"
+        layout="@layout/titlebar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/titlebar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/system_api_tips"
+                android:textColor="@color/Black"
+                android:textSize="22sp"
+                android:textStyle="italic"
+                android:layout_gravity="center" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/show_status_bar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:text="@string/system_show_status_bar"
+                    android:onClick="onClick"
+                    tools:ignore="MissingConstraints"
+                    android:background="@drawable/button_number_violet_shape"
+                    style="@style/buttonNumberStyle"/>
+
+
+                <Button
+                    android:id="@+id/hide_status_bar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:text="@string/system_hide_status_bar"
+                    android:onClick="onClick"
+                    tools:ignore="MissingConstraints"
+                    android:background="@drawable/button_number_violet_shape"
+                    style="@style/buttonNumberStyle"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/show_navigation_bar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:text="@string/system_show_navigation_bar"
+                    android:onClick="onClick"
+                    tools:ignore="MissingConstraints"
+                    android:background="@drawable/button_number_violet_shape"
+                    style="@style/buttonNumberStyle"/>
+
+                <Button
+                    android:id="@+id/hide_navigation_bar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:text="@string/system_hide_navigation_bar"
+                    android:onClick="onClick"
+                    tools:ignore="MissingConstraints"
+                    android:background="@drawable/button_number_violet_shape"
+                    style="@style/buttonNumberStyle"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/set_system_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:text="@string/system_set_time"
+                    android:onClick="onClick"
+                    tools:ignore="MissingConstraints"
+                    android:background="@drawable/button_number_violet_shape"
+                    style="@style/buttonNumberStyle"/>
+
+                <Button
+                    android:id="@+id/silence_install"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:text="@string/system_silent_install"
+                    android:onClick="onClick"
+                    tools:ignore="MissingConstraints"
+                    android:background="@drawable/button_number_violet_shape"
+                    style="@style/buttonNumberStyle"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/silence_uninstall"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:text="@string/system_silent_uninstall"
+                    android:onClick="onClick"
+                    android:background="@drawable/button_number_violet_shape"
+                    style="@style/buttonNumberStyle"/>
+
+                <Button
+                    android:id="@+id/set_static_ip_config"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:enabled="false"
+                    android:text="@string/system_set_static_ip"
+                    android:visibility="gone"
+                    android:onClick="onClick"
+                    android:background="@drawable/button_number_violet_shape"
+                    style="@style/buttonNumberStyle"/>
+
+                <Button
+                    android:id="@+id/reboot"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:text="@string/system_reset"
+                    android:onClick="onClick"
+                    tools:ignore="MissingConstraints"
+                    android:background="@drawable/button_number_violet_shape"
+                    style="@style/buttonNumberStyle"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/shutdown"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:text="@string/system_shutdown"
+                    android:onClick="onClick"
+                    tools:ignore="MissingConstraints"
+                    android:background="@drawable/button_number_violet_shape"
+                    style="@style/buttonNumberStyle"/>
+
+                <Button
+                    android:id="@+id/install_package"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:text="@string/system_install_firmware"
+                    android:onClick="onClick"
+                    tools:ignore="MissingConstraints"
+                    android:background="@drawable/button_number_violet_shape"
+                    style="@style/buttonNumberStyle"/>
+
+            </LinearLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp">
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:onClick="onClick"
+                        android:text="@string/system_app_path" />
+
+                    <EditText
+                        android:id="@+id/silence_install_path_edt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="onClick"
+                        android:text="/sdcard/xxx.apk" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:onClick="onClick"
+                        android:text="@string/system_app_package" />
+
+                    <EditText
+                        android:id="@+id/silence_install_package_edt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="onClick"
+                        android:text="com.xxx.xxx.xxx" />
+                </TableRow>
+            </TableLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/system_cpu_temperature"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:id="@+id/tvCpuTemperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/system_cpu_usage"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:id="@+id/tvCpuUsage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/system_memory_usage"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:id="@+id/tvMemoryUsage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/board"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/system_board"
+                android:textColor="#F44336"
+                android:textSize="25sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
