@@ -48,7 +48,7 @@ public class NFCActivityNew extends Activity implements NfcAdapter.CreateNdefMes
             finish();
         }
         // Register callback  *设置一个回调，使用Android Beam（TM）动态生成要发送的NDEF消息。
-        nfcAdapter.setNdefPushMessageCallback(this, this);
+//        nfcAdapter.setNdefPushMessageCallback(this, this);
         nfcAdapter.enableReaderMode(this, this, NfcAdapter.FLAG_READER_NFC_A | NfcAdapter.FLAG_READER_SKIP_NDEF_CHECK, null);
         binding.boundingBox.setVisibility(View.GONE);
         if(SystemUtil.getInternalModel().equals("C9") ||
@@ -64,7 +64,7 @@ public class NFCActivityNew extends Activity implements NfcAdapter.CreateNdefMes
         intentFilter.addAction(NFC_RESET_FINISH_ACTION);
 
         // 注册广播接收器
-        registerReceiver(myReceiver, intentFilter);
+//        registerReceiver(myReceiver, intentFilter);
 
     }
 
@@ -78,7 +78,7 @@ public class NFCActivityNew extends Activity implements NfcAdapter.CreateNdefMes
                     nfcAdapter = NfcAdapter.getDefaultAdapter(NFCActivityNew.this);
 
                     // Register callback  *设置一个回调，使用Android Beam（TM）动态生成要发送的NDEF消息。
-                    nfcAdapter.setNdefPushMessageCallback(NFCActivityNew.this, NFCActivityNew.this);
+//                    nfcAdapter.setNdefPushMessageCallback(NFCActivityNew.this, NFCActivityNew.this);
                     nfcAdapter.enableReaderMode(NFCActivityNew.this, NFCActivityNew.this, NfcAdapter.FLAG_READER_NFC_A | NfcAdapter.FLAG_READER_SKIP_NDEF_CHECK, null);
                 }
             }
